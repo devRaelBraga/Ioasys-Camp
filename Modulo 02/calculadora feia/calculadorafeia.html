@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raelson</title>
+    <style>
+        h1{
+            font: normal 20pt Arial;
+            background: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            width: 500px;
+            line-height: 100px;
+            text-align: center;
+        }
+        div{
+            font: normal 20pt Arial;
+            background: rgb(48, 99, 240) 100px;
+            color:white;
+            text-align: center;
+
+            
+        }
+        input {
+            background: rgb(100, 96, 96);
+            font: normal 18pt Arial;
+            color: white;
+            width: 120px;
+            height: 75px;
+            text-align: center;
+            border-radius: 6px;
+            border-color: rgb(82, 78, 78);
+
+        }
+            
+    </style>
+</head>
+<body>
+    <div>
+    <input type="number" name="txtn1" id="txtn1" style=" width: 430px; height: 100px">
+    <input type="button" value="AC" style="width: 150px;height: 105px" onclick="limpar()"><br/>
+    <br>
+    <input type="button" value="+" onclick="guardar('somar') ">
+    <input type="button" value="-" onclick="guardar('subtrair')"><br/><br>
+    <input type="button" value="/" onclick="guardar('dividir')">
+    <input type="button" value="x" onclick="guardar('multiplicar')"><br/><br>
+    <input type="button" value="=" onclick="result()"><br/>
+</div>
+    
+    <script>
+        let tn1 = 0;
+        let tn2 = 0;
+        let operat = "";
+
+        function limpar(){
+            var r = document.getElementById("txtn1");
+            r.value = ""
+        }
+
+        function result() {
+            if (operat == "somar"){
+                somar()
+            }
+            if (operat == "multiplicar"){
+                multiplicar()
+            }
+            if (operat == "subtrair"){
+                subtrair()
+            }
+            if (operat == "dividir"){
+                dividir()
+            }
+            
+        }
+
+        function guardar(op) {
+            n1 = document.getElementById('txtn1')
+            tn1 = Number(n1.value)
+            operat = op
+
+            txtn1.value = ""
+
+        }
+        function somar() {
+            n2 = document.getElementById('txtn1')
+            var txtn1= document.getElementById('txtn1')
+            tn2 = Number(n2.value)
+
+            txtn1.value = tn1 + tn2
+            
+        }
+        
+        function subtrair() {
+            n2 = document.getElementById('txtn1')
+            var txtn1= document.getElementById('txtn1')
+            tn2 = Number(n2.value)
+
+            txtn1.value = tn1 - tn2
+            
+        }
+        function dividir() {
+            n2 = document.getElementById('txtn1')
+            var txtn1= document.getElementById('txtn1')
+            tn2 = Number(n2.value)
+
+            txtn1.value = tn1 / tn2
+            
+        }
+        function multiplicar() {
+            n2 = document.getElementById('txtn1')
+            var txtn1= document.getElementById('txtn1')
+            tn2 = Number(n2.value)
+
+            txtn1.value = tn1 * tn2
+        
+        }
+
+        function operation(callback) {
+            var s = callback()
+            var txtn1= document.getElementById('txtn1')
+            txtn1.value = s
+        }
+    </script>
+    
+</body>
+</html>
